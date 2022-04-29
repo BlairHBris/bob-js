@@ -1,9 +1,11 @@
 export function hey(question) {
-    if(question.includes("?") && (question.length > 0) && (question.match(/[A-Z]/g) || []).length < 2) {
+    if(question.charAt(question.length-1) == "?" && (question.length > 0) && (question.match(/[A-Z]/g) || []).length < 6) {
         return "Sure."
-    } else if(question.includes("?") && (question.length > 0) && (question.match(/[A-Z]/g) || []).length >= 2) {
+    } else if(question.charAt(question.length-1) == "?" && (question.length > 0) && (question.match(/[A-Z]/g) || []).length >= 6) {
+        return "Calm down, I know what I'm doing!"
+    } else if((question.length > 0) && (question.match(/[A-Z]/g) || []).length >= 2) {
         return "Whoa, chill out!"
-    } else if(question.length = 0) {
+    } else if(question.length == 0 || question.includes('silence')) {
         return "Fine. Be that way!"
     } else {
         return "Whatever."
